@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Since We Met 💖</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="music/blue-melody.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Music Play Button for mobile/iOS -->
+  <button id="playMusicButton" style="position: fixed; top: 20px; right: 20px; z-index: 1000; background: #ffb6c1; color: #d63384; font-family: 'Comic Sans MS', cursive; font-size: 16px; padding: 10px 18px; border: none; border-radius: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); cursor: pointer;">
+    💗 Play Music
+  </button>
+
+  <!-- Live Date/Time -->
+  <div id="live-date-time"></div>
+
+  <!-- Main Heart Container -->
+  <div class="main-wrapper">
+    <div class="container">
+      <h1>We fell for each other on April 18, 2025 💘</h1>
+      <h2 id="count">Loading love time...</h2>
+      <p class="subtext">...and we’re still counting every heartbeat 🧡</p>
+
+      <div class="heart-background">
+        <div class="heart-photo-overlay">
+          <div class="image-heart">
+            <img src="images/photo1.jpg" alt="Memory 1" />
+          </div>
+          <div class="image-heart">
+            <img src="images/photo2.jpg" alt="Memory 2" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Love Symbols -->
+  <div id="love-hearts-container"></div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+  <script>
+    // Enable audio on user click for browsers that block autoplay
+    const playButton = document.getElementById("playMusicButton");
+    const bgAudio = document.getElementById("bg-music");
+
+    playButton.addEventListener("click", () => {
+      bgAudio.play();
+      playButton.style.display = "none";
+    });
+
+    // Try to hide the button automatically if autoplay works
+    bgAudio.addEventListener("play", () => {
+      playButton.style.display = "none";
+    });
+  </script>
+</body>
+</html>
